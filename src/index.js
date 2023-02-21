@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import Liabraries
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import React from "react";
+import ReactDOM from "react-dom";
+
+// create react componnent
+
+const App = () => {
+
+    const buttonText = 'Click Me!';
+    const HeadingText = 'Practice & Revision React JSX';
+
+    function getTime(){
+        return (new Date()).toLocaleTimeString()
+    }
+
+    return (
+        <div>
+            <center>
+            <h1>{HeadingText}</h1>
+            </center>
+            <label className="label" htmlFor='name'></label>
+            <input id="name" type='text'/>
+            <button style={{backgroundColor: 'red', color: 'white'}}>{buttonText}</button>
+            
+            {/* First Problem Solved */}
+            <h4>Current Time:</h4>
+            <h3>{getTime()}</h3>
+        </div>
+    );
+};
+
+// take the component and show it to screen
+ReactDOM.render(
+
+    <App/>,
+    document.querySelector('#root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
